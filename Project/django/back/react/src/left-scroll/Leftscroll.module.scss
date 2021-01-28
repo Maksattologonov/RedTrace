@@ -25,7 +25,7 @@
   margin: 20px 0 0 40px;
 
 }
- a{
+ .a{
   text-decoration: none;
    color: #fff;
    transition: .3s;
@@ -35,7 +35,7 @@
      text-decoration: none;
    }
 }
- a:hover,:focus{
+ .a:hover,:focus{
   list-style: none;
   transition: .2s;
   color: #f1f2f6;

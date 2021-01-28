@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+:root {
+  --space-root: 1rem;
+  --font-family: 'Roboto', sans-serif;
+}
+
+@mixin label-styles {
+  font-size: calc(var(--font-size) / 1.65);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.065rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.body {
+  display: grid;
+  place-items: center;
+  margin: 0;
+  height: 100vh;
+  padding: var(--space-m);
+  font-size: 1.25rem;
+  font-family: var(--font-family);
+  line-height: 1.2;
+  background-color: #fff;
+}
+
+.a {
+  color: mediumslateblue;
+
+  &:focus {
+    color: black;
+  }
+}
+
+.h2 {
+  font-weight: 700;
+  font-size: calc(1.25rem * 1.5);
+}
+
+.form {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
+  transform: skewY(-5deg) translateY(10%) scale(0.94);
+  transition:
+          box-shadow 350ms cubic-bezier(0.075, 0.82, 0.165, 1),
+          transform 350ms cubic-bezier(0.075, 0.82, 0.165, 1);
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    pointer-events: none;
+    background-color: #ccceee;
+    width: 25%;
+    height: 100%;
+    transition:
+            background-color 350ms cubic-bezier(0.075, 0.82, 0.165, 1),
+            transform 350ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+
+  &:before {
+    top: 0;
+    right: calc(100% - 1px);
+    transform-origin: 100% 100%;
+    transform: skewY(-35deg) scaleX(-1);
+    z-index: -1;
+  }
+
+  &:after {
+    top: 0;
+    left: calc(100% - 1px);
+    transform-origin: 0 0;
+    transform: skewY(-35deg) scaleX(-1);
+    z-index: 2;
+  }
+
+  &:hover,
+  &:focus-within {
+    transform: scale(1.0001);
+    box-shadow: 0 1rem 3rem rgba(black, 0.1);
+
+    &:before,
+    &:after {
+      background-color: #ccc;
+      transform: skewY(0);
+    }
+  }
+}
+
+.formInner {
+  padding: calc(var(--space-root) * 2);
+  background-color: #ccc;
+  z-index: 1;
+
+
+  > * + * {
+    margin-top: calc(var(--space-root) * 2);
+  }
+}
+
+.inputWrapper {
+  &:focus-within {
+    label {
+      color: black;
+    }
+
+    .icon {
+      background-color: black;
+    }
+
+    input {
+      border-color: black;
+    }
+  }
+
+  + .inputWrapper {
+    margin-top:  calc(var(--space-root) * 1.5);
+  }
+}
+
+.inputGroup {
+  position: relative;
+
+  input {
+    border-radius: 0.25rem;
+    padding-left: 60px;
+  }
+
+  .icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+    pointer-events: none;
+  }
+}
+
+label {
+  @include label-styles;
+  display: block;
+  margin-bottom: calc(var(--space-root) / 2);
+  color: mediumslateblue;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  flex: 0 1 auto;
+  padding: var(--space-root);
+  background-color: mediumslateblue;
+
+  svg {
+    width: 1.25em;
+    height: 1.25em;
+    fill: white;
+    pointer-events: none;
+    user-select: none;
+    transition: transform 350ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+}
+
+input {
+  flex: 1 1 0;
+  width: 100%;
+  outline: none;
+  padding: var(--space-root);
+  font-size: 1.25rem;
+  font-family: var(--font-family);
+  color: mediumslateblue;
+  border: 2px solid mediumslateblue;
+
+  &:focus {
+    color: mediumslateblue;
+  }
+}
+
+.btnGroup {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  > * + * {
+    margin-left: calc(var(--space-root) / 1.5);
+  }
+}
+
+.btn {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  outline: none;
+  padding: var(--space-root)  calc(var(--space-root) * 1.5);
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 0.25rem;
+}
+
+.btnPrimary {
+  @include label-styles;
+  background-color: mediumslateblue;
+  border-color: mediumslateblue;
+  color: white;
+
+  &:focus {
+    background-color: black;
+    border-color: black;
+  }
+}
+
+.btnText {
+  font-size: calc(1.25rem / 1.5);
+  padding: 0;
+}

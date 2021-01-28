@@ -6,6 +6,9 @@ import Portfolio from "./menu/Portfolio/Portfolio";
 import img from './menu/Portfolio/licey.png'
 import img2 from './menu/Portfolio/wesley-tingey-eMNevd6ErCU-unsplash.jpg'
 import img3 from './menu/Portfolio/background.png'
+import Instruments from "./menu/Instruments/Instruments";
+import Contacts from "./menu/Contacts/Contacts";
+import Input from "./menu/Contacts/Input/Input";
 
 class LeftScroll extends Component {
     state = {
@@ -32,27 +35,27 @@ class LeftScroll extends Component {
                 <div className={classes.main}>
                     <div className='container'>
                         <div className={classes.menu}>
-                            <h1 className={classes.title}><NavLink to={'about-us'}> О НАС </NavLink></h1>
+                            <h1 className={classes.title}><NavLink to={'about-us'} className={classes.a}> О НАС </NavLink></h1>
                             <ul className={classes.menuItem}>
-                                <li className={classes.menuItems}><NavLink to='/services'
-                                                                           activeClassName={classes.active}> Услуги</NavLink>
+                                <li className={classes.menuItems}><NavLink to='/about-us/services'
+                                                                           activeClassName={classes.active} className={classes.a}> Услуги</NavLink>
                                 </li>
-                                <li className={classes.menuItems}><NavLink to='/portfolio'
-                                                                           activeClassName={classes.active}> Наши
+                                <li className={classes.menuItems}><NavLink to='/about-us/portfolio'
+                                                                           activeClassName={classes.active} className={classes.a}> Наши
                                     работы</NavLink>
                                 </li>
-                                <li className={classes.menuItems}><NavLink to='/instruments'
-                                                                           activeClassName={classes.active}> Инструменты</NavLink>
+                                <li className={classes.menuItems}><NavLink to='/about-us/instruments'
+                                                                           activeClassName={classes.active} className={classes.a}> Инструменты</NavLink>
                                 </li>
-                                <li className={classes.menuItems}><NavLink to='/contacts'
-                                                                           activeClassName={classes.active}> Контакты</NavLink>
+                                <li className={classes.menuItems}><NavLink to='/about-us/contacts'
+                                                                           activeClassName={classes.active} className={classes.a}> Контакты</NavLink>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <Route path='/services' exact component={Service}/>
-                <Route path='/portfolio' exact component={() => <div className={classes.card}><Portfolio
+                <Route path='/about-us/services' exact component={Service}/>
+                <Route path='/about-us/portfolio' exact component={() => <div className={classes.card}><Portfolio
                     img={this.state.licey[1].img}
                     link={this.state.licey[0].link}
                     text={this.state.licey[2].text}
@@ -68,9 +71,15 @@ class LeftScroll extends Component {
                         text={this.state.Megasport[2].text}
                     /></div>}
                 />
+                <Route path='/about-us/instruments' exact component={()=> <div className={classes.card}><Instruments/>
+                    <Instruments/>
+                    <Instruments/>
+                    <Instruments/>
+                </div>} />
+                <Route path='/about-us/contacts' exact component={Contacts}/>
+                <Route path='/about-us/contacts/callback' exact component={()=><Input/>}/>
             </>
         )
     }
 }
-
 export default LeftScroll
