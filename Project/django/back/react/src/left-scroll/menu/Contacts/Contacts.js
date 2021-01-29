@@ -1,7 +1,6 @@
 import React from 'react'
 import classes from './Contacts.module.scss'
-import Input from "./Input/Input";
-import {NavLink, Route} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 
 const Contacts = props => {
     return (

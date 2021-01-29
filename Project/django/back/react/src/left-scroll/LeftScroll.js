@@ -48,7 +48,7 @@ class LeftScroll extends Component {
                                                                            activeClassName={classes.active} className={classes.a}> Инструменты</NavLink>
                                 </li>
                                 <li className={classes.menuItems}><NavLink to='/about-us/contacts'
-                                                                           activeClassName={classes.active} className={classes.a}> Контакты</NavLink>
+                                                                           activeClassName={classes.active} className={classes.a + ' ' + classes.contact}> Контакты</NavLink>
                                 </li>
                             </ul>
                         </div>

@@ -17,7 +17,7 @@ const Input = props => {
                                  0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z">
 
                             </path></svg></span><input
-                            data-lpignore="true" id="login-username" type="text"/>
+                            data-lpignore="true" id="login-username" type="text" className={classes.input}/>
                         </div>
                     </div>
                     <div className={classes.inputWrapper}>
@@ -61,7 +61,7 @@ const Input = props => {
                             ></svg>
                             </span>
                             <input
-                                data-lpignore="true" id="login-password" type="password"/>
+                                data-lpignore="true" id="login-password" type="password"  className={classes.input}/>
                         </div>
                     </div>
                     <div className={classes.btnGroup}>

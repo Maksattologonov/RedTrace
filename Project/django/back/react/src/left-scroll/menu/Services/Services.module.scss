@@ -1,9 +1,10 @@
-.main{
+.main {
   margin-top: 30px;
   display: flex;
   overflow: hidden;
 }
-.block{
+
+.block {
   border: 1px black;
   position: relative;
   width: 20vw;
@@ -11,19 +12,22 @@
   margin: 0;
   padding: 0;
   transition: 1s;
-  &:hover
-  {
+
+  &:hover {
     transition: 0.3s;
-    width: 330vw;
+    width: 300vw;
     object-fit: fill;
-    display: block;
   }
 }
 
-.img{
+.img {
+  position: absolute;
   object-fit: cover;
+  width: 70vw;
+  height: 90vh;
 }
-.text{
+
+.text {
   background-color: #fff;
   width: 90%;
   margin-left: 6%;
@@ -35,14 +39,15 @@
   position: absolute;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   top: 30%;
-  bottom:40%;
+  bottom: 40%;
   left: 0;
   right: 0;
   transition: 0.2s;
-  &:hover{
+
+  &:hover {
     transform: translateY(15px);
     transition: 0.3s;
     opacity: 1;

@@ -12,19 +12,18 @@ const headerStyle = {
 };
 
 
-
-const Instruments=()=>{
-    return(
+const Instruments = () => {
+    return (
         <div className={classes.main}>
-        <div className={classes.wrap}>
+            <div className={classes.wrap}>
                 <Card
                     className={classes.main}
                     style={headerStyle}
                 >
-                    <img src={img} alt='none'/>
+                    <img src={img} alt='none' className={classes.img}/>
                     <h1 className={classes.text}>React</h1>
                 </Card>
-        </div>
+            </div>
         </div>
     )
 }
