@@ -8,7 +8,7 @@ import img2 from './menu/Portfolio/wesley-tingey-eMNevd6ErCU-unsplash.jpg'
 import img3 from './menu/Portfolio/background.png'
 import Instruments from "./menu/Instruments/Instruments";
 import Contacts from "./menu/Contacts/Contacts";
-import Input from "./menu/Contacts/Input/Input";
+import Input from "./menu/Contacts/Input/Inputs";
 
 class LeftScroll extends Component {
     state = {
@@ -35,20 +35,25 @@ class LeftScroll extends Component {
                 <div className={classes.main}>
                     <div className='container'>
                         <div className={classes.menu}>
-                            <h1 className={classes.title}><NavLink to={'about-us'} className={classes.a}> О НАС </NavLink></h1>
+                            <h1 className={classes.title}><NavLink to={'about-us'} className={classes.a}> О
+                                НАС </NavLink></h1>
                             <ul className={classes.menuItem}>
                                 <li className={classes.menuItems}><NavLink to='/about-us/services'
-                                                                           activeClassName={classes.active} className={classes.a}> Услуги</NavLink>
+                                                                           activeClassName={classes.active}
+                                                                           className={classes.a}> Услуги</NavLink>
                                 </li>
                                 <li className={classes.menuItems}><NavLink to='/about-us/portfolio'
-                                                                           activeClassName={classes.active} className={classes.a}> Наши
+                                                                           activeClassName={classes.active}
+                                                                           className={classes.a}> Наши
                                     работы</NavLink>
                                 </li>
                                 <li className={classes.menuItems}><NavLink to='/about-us/instruments'
-                                                                           activeClassName={classes.active} className={classes.a}> Инструменты</NavLink>
+                                                                           activeClassName={classes.active}
+                                                                           className={classes.a}> Инструменты</NavLink>
                                 </li>
                                 <li className={classes.menuItems}><NavLink to='/about-us/contacts'
-                                                                           activeClassName={classes.active} className={classes.a + ' ' + classes.contact}> Контакты</NavLink>
+                                                                           activeClassName={classes.active}
+                                                                           className={classes.a + ' ' + classes.contact}> Контакты</NavLink>
                                 </li>
                             </ul>
                         </div>
@@ -71,15 +76,16 @@ class LeftScroll extends Component {
                         text={this.state.Megasport[2].text}
                     /></div>}
                 />
-                <Route path='/about-us/instruments' exact component={()=> <div className={classes.card}><Instruments/>
+                <Route path='/about-us/instruments' exact component={() => <div className={classes.card}><Instruments/>
                     <Instruments/>
                     <Instruments/>
                     <Instruments/>
-                </div>} />
+                </div>}/>
                 <Route path='/about-us/contacts' exact component={Contacts}/>
-                <Route path='/about-us/contacts/callback' exact component={()=><Input/>}/>
+                <Route path='/about-us/contacts/callback' exact component={() => <Input/>}/>
             </>
         )
     }
 }
+
 export default LeftScroll
