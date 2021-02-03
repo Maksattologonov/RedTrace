@@ -1,0 +1,41 @@
+.afterIcon{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 40%;
+  bottom: 20%;
+  left: 90%;
+  right: 0;
+  transition: 0.5s;
+  border-radius: 15% 0 0 15%;
+
+  &:hover{
+    background-color: #ccc;
+    transition: 0.5s;
+  }
+}
+.beforeIcon{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 40%;
+  bottom: 20%;
+  left: 0;
+  right: 0;
+  transition: 0.5s;
+  border-radius: 0 15% 15% 0;
+
+  &:hover{
+    background-color: #ccc;
+    transition: 0.5s;
+
+  }
+}
+.link{
+  margin: 20px;
+  &:hover{
+    background-color: #ccc;
+  }
+}

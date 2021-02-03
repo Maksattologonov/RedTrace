@@ -1,13 +1,4 @@
-.main{
-  position: relative;
-  display: flex;
-  background-image: url('licey.png');
-  width: 500px;
-  height: 500px;
-  background-color: black;
-  padding: 50px;
-  margin: 50px;
-}
+
 .img{
   position: absolute;
   object-fit: cover;
@@ -16,7 +7,7 @@
 }
 .wrap{
   display: flex;
-  margin: 50px;
+  padding: 20px;
 }
 .text{
   color: #000;
@@ -28,4 +19,15 @@
   bottom: 0;
   left: 0;
   right: 0;
+}
+@media screen and (max-width: 375px){
+  .main{
+    margin: 0;
+    padding: 0;
+  }
+  .wrap{
+    border-radius: 5px;
+    padding: 0;
+    margin: 0;
+  }
 }

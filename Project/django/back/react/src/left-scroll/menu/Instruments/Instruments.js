@@ -2,6 +2,7 @@ import React from 'react'
 import classes from "./Instruments.module.scss";
 import Card from "react-animated-3d-card";
 import img from '../../../logo.svg'
+import {Container} from "@material-ui/core";
 
 
 const headerStyle = {

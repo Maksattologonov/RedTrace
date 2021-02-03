@@ -5,13 +5,13 @@ import upgrade from './upgrade.jpg'
 import support from './support.jpg'
 import smartphone from './smartphone.jpg'
 import classes from './Services.module.scss'
+import {Container} from "@material-ui/core";
 
 const Service = props => {
 
     return (
-        <>
-            <div className='container'>
-                <div className={classes.main}>
+            <Container  fluid>
+            <div className={classes.main}>
                     <div className={classes.block}>
                         <img src={website} alt={'website'} className={classes.img}/>
                         <div className={classes.text}><h1 className={classes.h1}>Создание Веб сайтов</h1>Создание веб сайта любой сложности,
@@ -45,8 +45,7 @@ const Service = props => {
                         </div>
                     </div>
                 </div>
-            </div>
-        </>
+        </Container>
     )
 }
 export default Service

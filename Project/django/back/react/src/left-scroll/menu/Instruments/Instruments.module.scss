@@ -1,6 +1,11 @@
 .main{
   position: relative;
-  margin: 30px;
+  margin-top: 10vh;
+}
+.wrap{
+  display: flex;
+  padding: 20px;
+  margin-top: 5vh;
 }
 .img{
   position: absolute;
@@ -18,4 +23,18 @@
   font-weight: bold;
   position: absolute;
 }
-
+@media screen and (max-width: 405px){
+  .wrap{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top:  15px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+  }
+  .main{
+    margin-top: 20vh;
+  }
+}

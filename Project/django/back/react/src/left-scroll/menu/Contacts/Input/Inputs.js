@@ -6,7 +6,7 @@ import {Transition} from "react-spring/renderprops-universal";
 const Subs = props => {
     return (props.trigger) ? (
         <Transition>
-            from={{ transform: 'translateX(0)'  }}
+            from={{ transform: 'translateX(100px)'  }}
             enter={[{ transform: 'translateX(-100%)' }, {transition: '0.5s'}]}
             leave={[{ transform: 'translateX(0)'  }, {transition: '0.5s'}]}>
         <div className={classes.main}>
