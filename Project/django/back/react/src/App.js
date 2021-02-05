@@ -21,13 +21,13 @@ const App = props => {
     const location = useLocation()
     const transition = useTransition(location, location => location.pathname, {
         from: {
-             transform: 'translateY(-300vw)', transition: '0.3s',
+             transform: 'translateY(100vh)', transition: '0.1s',opacity: 0,
         },
         enter: {
-             transform: 'translateY(0)', transition: '0.3s',
+             transform: 'translateY(0)', transition: '0.3   s',opacity: 1,
         },
         leave: {
-             transform: 'translateY(1000px)',  transition: '.3s',
+             transform: 'translateY(-1000vh)',  transition: '.5s',opacity: 0,
         }
     })
     const visible = {
@@ -49,6 +49,14 @@ const App = props => {
     }
     return (
         <>
+            <NavLink to='/about-us' className={classes.link} style={{zIndex: 100
+            }}>
+                <NavigateBeforeIcon style={{fontSize: '100pt', cursor: 'pointer'}} className={classes.beforeIcon}/>
+            </NavLink>
+            <NavLink to='/portfolio' className={classes.link} style={{zIndex: 100
+            }}>
+                <NavigateNextIcon style={{fontSize: '100pt', cursor: 'pointer'}} className={classes.afterIcon}/>
+            </NavLink>
             <div className={classes.main}>
                 <div className='container-fluid'>
                     <div className={classes.menu}>
@@ -75,9 +83,7 @@ const App = props => {
                     </div>
                 </div>
             </div>
-            <NavLink to='/about-us' className={classes.link}>
-                <NavigateBeforeIcon style={{fontSize: '100pt', cursor: 'pointer'}} className={classes.beforeIcon}/>
-            </NavLink>
+
             {transition.map(({item, props, key}) => (
                 <animated.div key={key} style={props}>
                     <Switch location={item}>
@@ -114,9 +120,7 @@ const App = props => {
                     </Switch>
                 </animated.div>
             ))}
-            <NavLink to='/portfolio' className={classes.link}>
-                <NavigateNextIcon style={{fontSize: '100pt', cursor: 'pointer'}} className={classes.afterIcon}/>
-            </NavLink>
+
         </>
     )
 }
