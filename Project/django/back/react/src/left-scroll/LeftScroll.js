@@ -21,7 +21,7 @@ const LeftScroll = () => {
             transform: 'translateY(0)', transition: '0.3   s', opacity: 1,
         },
         leave: {
-            transform: 'translateY(-1000vh)', transition: '.5s', opacity: 0,
+            transform: 'translateY(-1000vh)', transition: '.3s', opacity: 0,
         }
     })
 
@@ -30,36 +30,36 @@ const LeftScroll = () => {
             {transition.map(({item, props, key}) => (
                 <animated.div key={key} style={props}>
                     <Grid xs={12}>
-                            <div className={classes.main}>
-                                <div className='container-fluid'>
-                                    <Grid>
-                                    <div className={classes.menu}>
-                                        <h6 className={classes.title}><NavLink to={'/'}
-                                                                               className={classes.a}> Домой </NavLink>
-                                        </h6>
-                                        <ul className={classes.menuItem}>
-                                            <li className={classes.menuItems}><NavLink to='/about-us/services'
-                                                                                       activeClassName={classes.active}
-                                                                                       className={classes.a}> Услуги</NavLink>
-                                            </li>
-                                            <li className={classes.menuItems}><NavLink to='/about-us/portfolio'
-                                                                                       activeClassName={classes.active}
-                                                                                       className={classes.a}> Наши
-                                                работы</NavLink>
-                                            </li>
-                                            <li className={classes.menuItems}><NavLink to='/about-us/instruments'
-                                                                                       activeClassName={classes.active}
-                                                                                       className={classes.a}> Инструменты</NavLink>
-                                            </li>
-                                            <li className={classes.menuItems}><NavLink to='/about-us/contacts'
-                                                                                       activeClassName={classes.active}
-                                                                                       className={classes.a + ' ' + classes.contact}> Контакты</NavLink>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    </Grid>
-                                </div>
-                            </div>
+                            {/*<div className={classes.main}>*/}
+                            {/*    <div className='container-fluid'>*/}
+                            {/*        <Grid>*/}
+                            {/*        <div className={classes.menu}>*/}
+                            {/*            <h6 className={classes.title}><NavLink to={'/'}*/}
+                            {/*                                                   className={classes.a}> Домой </NavLink>*/}
+                            {/*            </h6>*/}
+                            {/*            <ul className={classes.menuItem}>*/}
+                            {/*                <li className={classes.menuItems}><NavLink to='/about-us/services'*/}
+                            {/*                                                           activeClassName={classes.active}*/}
+                            {/*                                                           className={classes.a}> Услуги</NavLink>*/}
+                            {/*                </li>*/}
+                            {/*                <li className={classes.menuItems}><NavLink to='/about-us/portfolio'*/}
+                            {/*                                                           activeClassName={classes.active}*/}
+                            {/*                                                           className={classes.a}> Наши*/}
+                            {/*                    работы</NavLink>*/}
+                            {/*                </li>*/}
+                            {/*                <li className={classes.menuItems}><NavLink to='/about-us/instruments'*/}
+                            {/*                                                           activeClassName={classes.active}*/}
+                            {/*                                                           className={classes.a}> Инструменты</NavLink>*/}
+                            {/*                </li>*/}
+                            {/*                <li className={classes.menuItems}><NavLink to='/about-us/contacts'*/}
+                            {/*                                                           activeClassName={classes.active}*/}
+                            {/*                                                           className={classes.a + ' ' + classes.contact}> Контакты</NavLink>*/}
+                            {/*                </li>*/}
+                            {/*            </ul>*/}
+                            {/*        </div>*/}
+                            {/*        </Grid>*/}
+                            {/*    </div>*/}
+                            {/*</div>*/}
                             <Switch location={item}>
                                 <Route path='/about-us/services' component={Service}/>
                                 <Route path='/about-us/portfolio' component={Portfolio}/>
@@ -67,6 +67,7 @@ const LeftScroll = () => {
                                        component={Instruments}/>
                                 <Route path='/about-us/contacts' component={Contacts}/>
                                 <Route path='/about-us/callback' component={Input}/>
+                                <Route component={()=>(<h1 style={{color: 'red'}}>Нет такой страницы</h1>)}/>
                             </Switch>
                     </Grid>
                 </animated.div>

@@ -15,7 +15,7 @@ import PhoneIcon from '@material-ui/icons/Phone';
 
 const useStyles = makeStyles((theme) => ({
     paper: {
-        marginTop: theme.spacing(8),
+        marginTop: theme.spacing(10),
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
         width: '100%', // Fix IE 11 issue.
     },
     submit: {
-        margin: theme.spacing(3, 0, 2),
+        margin: theme.spacing(2, 0, 2),
         backgroundColor: '#eb3b5a'
     },
 }));

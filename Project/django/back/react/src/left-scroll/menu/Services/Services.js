@@ -20,7 +20,7 @@ const Service = props => {
             <div className={classes.main}>
                 {service.map(p => (
                     <div className={classes.block}>
-                            <img src={p.image} alt={'website'} className={classes.img}/>
+                            <img src={p.image} alt='none' className={classes.img}/>
                         <div className={classes.text}><h1 className={classes.h1}>{p.title}</h1>
                             {p.text}
                         </div>

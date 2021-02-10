@@ -4,30 +4,31 @@
   height: 100%;
   width: 100%;
   left: 50%;
+  overflow: hidden;
   transform: translate(-50%, -50%);
 }
 
 .text {
+  position: absolute;
   width: 100%;
   background-image: url(adrian-Xft-JdC-Jbc-unsplash.jpg);
-  background-size: 100% 100%;
   background-position: center;
   font-size: 150px;
   text-transform: uppercase;
   text-align: center;
   line-height: 200px;
-  position: absolute;
   left: 50%;
-  top: 50%;
+  margin-top: 20%;
   transform: translate(-50%, -50%);
   -webkit-background-clip: text;
   color: transparent;
+  text-decoration: none;
   transition: all 2.5s ease-in-out;
 }
 
 .main:hover .text {
-  background-size: 10% 10%;
-  top: 50%;
+  background-size: 5% 5%;
+
 }
 
 .bg {
@@ -41,7 +42,7 @@
 }
 
 .main:hover .bg {
-  background-size: 150% 150%;
+  background-size: 100% 105%;
 }
 .wrap{
   top: 50%;
