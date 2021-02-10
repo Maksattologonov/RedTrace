@@ -1,7 +1,8 @@
-import React, {Component} from "react";
+import React, {Component, useEffect, useState} from "react";
 import Card from 'react-animated-3d-card'
 import classes from './Portfolio.module.scss'
 import {Link} from "react-router-dom";
+import axios from "axios";
 
 const headerStyle = {
     width: '300px',
@@ -10,23 +11,36 @@ const headerStyle = {
     marginTop: '30%',
 };
 
-class Portfolio extends Component {
-    render() {
-        return (
-            <div className={classes.wrap}>
-                <Link href={`/` + this.props.link}>
+const Portfolio = ()=> {
+
+const [portfolio, setPortfolio] = useState([])
+useEffect(() => {
+    axios({
+        method: "GET",
+        url: "http://127.0.0.1:8000/api/portfolio",
+    }).then(response => {
+        setPortfolio(response.data)
+    })
+}, [])
+
+
+    return (
+        <div className={classes.main}>
+        {portfolio.map(p=>(
+            <div className={classes.wrap} key={p.id}>
+                <Link href={p.url}>
                     <Card
                         className={classes.main}
                         style={headerStyle}
                         onClick={() => console.log('Card clicked')}
                     >
-                        <img src={this.props.img} alt="none" className={classes.img}/>
-                        <h1 className={classes.text}>{this.props.text}</h1>
+                        <img src={p.image} alt="none" className={classes.img}/>
+                        <h1 className={classes.text}>{p.name}</h1>
                     </Card>
                 </Link>
-            </div>
+            </div>))}
+        </div>
         )
-    }
 }
 
 export default Portfolio

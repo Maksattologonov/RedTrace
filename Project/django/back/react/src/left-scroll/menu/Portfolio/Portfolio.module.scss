@@ -1,4 +1,12 @@
-
+.main{
+  margin-top: 10%;
+  margin-left: 5%;
+  margin-right: 5%;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  justify-content: center;
+}
 .img{
   position: absolute;
   object-fit: cover;

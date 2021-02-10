@@ -1,5 +1,4 @@
 .wrap {
-  top: 50px;
   display: flex;
   position: relative;
   flex-direction: column;
@@ -14,6 +13,9 @@
 }
 
 .main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   right: 3%;
   top: 10%;
   position: absolute;
@@ -27,12 +29,12 @@
 }
 .block{
   margin: 10px;
-  font-size: 20pt;
+  font-size: 12pt;
   font-weight: bold;
 }
 .number{
   margin: 10px;
-  font-size: 15pt;
+  font-size: 12pt;
   font-weight: normal;
 }
 

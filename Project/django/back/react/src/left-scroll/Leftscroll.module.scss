@@ -1,26 +1,10 @@
 *{font-family: 'Rubik', sans-serif;}
-@media screen and (max-width: 375px){
-  body{
-    overflow: hidden;
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 375px;
-    margin: 0;
-    padding: 0;
-  }
-  .card > div,
-  .card > div > img{
-    width: 250px;
-    height: 250px;
-    object-fit: cover;
-    margin: 15px;
-  }
-}
+
 .main{
   top: 0;
   left: 0;
   right: 0;
-  position: absolute;
+  position: sticky;
   justify-content: center;
   align-items: center;
   background-color: #eb3b5a;

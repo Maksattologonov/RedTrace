@@ -61,6 +61,8 @@
 @media screen and (max-width: 375px){
   .block{
     width: 350px;
+    display: flex;
+    flex-direction: column;
     &:hover{
       width: 350px;
     }
@@ -84,4 +86,5 @@
     }
   }
 }
+
 
