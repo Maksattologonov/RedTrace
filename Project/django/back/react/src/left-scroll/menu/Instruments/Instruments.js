@@ -8,7 +8,8 @@ const headerStyle = {
     width: '250px',
     height: '250px',
     backgroundColor: '#eb3b5a',
-    position: 'relative'
+    marginTop: '30%',
+
 };
 
 
@@ -24,6 +25,9 @@ const Instruments = () => {
         })
     }, [])
 
+    function CardClickHandler(){
+        console.log("Не жми так сильно")
+    }
     return (
         <div className={classes.main}>
             {instrument.map(item => (
@@ -31,6 +35,7 @@ const Instruments = () => {
                     <Card
                         className={classes.main}
                         style={headerStyle}
+                        onClick={CardClickHandler}
                     >
                         <img src={item.image} alt='none' className={classes.img}/>
                         <h1 className={classes.text}>{item.name}</h1>

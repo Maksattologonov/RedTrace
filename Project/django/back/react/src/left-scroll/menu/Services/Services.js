@@ -5,6 +5,10 @@ import axios from "axios";
 
 const Service = props => {
 
+    const style = {
+        backgroundImage: 'url(../../media/resurs1.png'
+    }
+
     const [service, setService] = useState([])
     useEffect(() => {
         axios({
@@ -17,7 +21,7 @@ const Service = props => {
 
     return (
         <Container fluid>
-            <div className={classes.main}>
+            <div className={classes.main} style={style}>
                 {service.map(p => (
                     <div className={classes.block}>
                             <img src={p.image} alt='none' className={classes.img}/>

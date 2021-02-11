@@ -1,19 +1,18 @@
-import React from 'react'
+import React, {useState} from 'react'
 import classes from './main.module.scss'
-import {NavLink} from "react-router-dom";
+import Trail from "../UI/Cursor/Trail";
 
 
 const Main = props => {
+    const [open, set] = useState(true)
     return (
         <div className={classes.wrap}>
-        <div className={classes.main}>
-            <div className={classes.bg}/>
-            <div className={classes.text}>
-                <NavLink to='/about-us'>
-                Awesome
-                </NavLink>
-            </div>
-        </div>
+            <Trail open={open} onClick={() => set((state) => !state)}>
+                <span>IT</span>
+                <span>Company</span>
+                <span style={{color: "red"}}>Red</span>
+                <span>Trace</span>
+            </Trail>
         </div>
     )
 }

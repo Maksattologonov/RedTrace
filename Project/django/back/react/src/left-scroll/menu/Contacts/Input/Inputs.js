@@ -1,6 +1,5 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
@@ -11,6 +10,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import {NavLink} from "react-router-dom";
 import PhoneIcon from '@material-ui/icons/Phone';
+import {CssBaseline} from "@material-ui/core";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -27,14 +27,15 @@ const useStyles = makeStyles((theme) => ({
         width:'30px',
         height: '30px',
         borderRadius: '50%',
-        backgroundColor: '#eb3b5a'
+        backgroundColor: '#1e272e'
     },
     form: {
-        width: '100%', // Fix IE 11 issue.
+        width: '100%',
+        color:'#1e272e'// Fix IE 11 issue.
     },
     submit: {
         margin: theme.spacing(2, 0, 2),
-        backgroundColor: '#eb3b5a'
+        backgroundColor: '#1e272e'
     },
 }));
 
@@ -43,7 +44,7 @@ export default function Input() {
     const classes = useStyles();
 
     return (
-        <Container component="main" maxWidth="xs">
+        <Container component="main" maxWidth="sm">
             <CssBaseline />
             <div className={classes.paper}>
                 <PhoneIcon className={classes.avatar}>
@@ -88,6 +89,18 @@ export default function Input() {
                                 autoComplete="email"
                             />
                         </Grid>
+
+                        <Grid item xs={12}>
+                            <TextField
+                                variant="outlined"
+                                fullWidth
+                                name="text"
+                                label="Оставьте коментарии"
+                                type="text"
+                                id="text"
+                                autoComplete="text"
+                            />
+                        </Grid>
                         <Grid item xs={12}>
                             <h6>Когда вам удобно принять вызов</h6>
                             <TextField
@@ -115,11 +128,11 @@ export default function Input() {
                         color="primary"
                         className={classes.submit}
                     >
-                        Sign Up
+                        Отправить
                     </Button>
                     <Grid container justify="flex-end">
                         <Grid item>
-                            <NavLink to="/about-us/contacts" variant="body2">
+                            <NavLink to="/about-us/contacts" variant="body2" style={{color: '#1e272e'}}>
                                 Вернуться назад
                             </NavLink>
                         </Grid>

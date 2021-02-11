@@ -28,16 +28,14 @@ useEffect(() => {
         <div className={classes.main}>
         {portfolio.map(p=>(
             <div className={classes.wrap} key={p.id}>
-                <Link href={p.url}>
                     <Card
                         className={classes.main}
                         style={headerStyle}
-                        onClick={() => console.log('Card clicked')}
+                        onClick={() => window.location.href = p.url}
                     >
                         <img src={p.image} alt="none" className={classes.img}/>
                         <h1 className={classes.text}>{p.name}</h1>
                     </Card>
-                </Link>
             </div>))}
         </div>
         )

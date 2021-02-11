@@ -1,0 +1,105 @@
+.main{
+  top: 0;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  position: absolute;
+  z-index: 10;
+}
+.title{
+  justify-content: center;
+  align-items: center;
+  color: #485460;
+  margin: 10px 0 10px 0 ;
+}
+.menu{
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+.menuItem{
+  display: flex;
+}
+.menuItems{
+  border-right: #d2dae2 1px solid;
+  padding: 20px;
+  text-decoration: none;
+  list-style: none;
+  color: #1e272e;
+ &:last-child{
+   border: none;
+ }
+}
+.a{
+  text-decoration: none;
+  color: #1e272e;
+  transition: .3s;
+  &:first-child:hover,:focus,
+  :first-child
+  {
+    text-decoration: none;
+  }
+}
+.a:hover,:focus{
+  list-style: none;
+  transition: .2s;
+  color: #000;
+}
+.active{
+  border-bottom: 3px solid #000;
+  transition: 0.2s;
+}
+.title{
+  text-decoration: none;
+  font-size: 20pt;
+  &:hover{
+    text-decoration: none;
+  }
+}
+.card{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center
+}
+.contact{
+  position: absolute;
+}
+.afterIcon{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: 0.5s;
+  border-radius: 15% 0 0 15%;
+
+  &:hover{
+    background-color: #ccc;
+    transition: 0.5s;
+  }
+}
+.beforeIcon{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 40%;
+  bottom: 20%;
+  left: 0;
+  right: 0;
+  transition: 0.5s;
+  border-radius: 0 15% 15% 0;
+
+  &:hover{
+    background-color: #ccc;
+    transition: 0.5s;
+
+  }
+}
+.link{
+  margin: 20px;
+  &:hover{
+    background-color: #ccc;
+  }
+}

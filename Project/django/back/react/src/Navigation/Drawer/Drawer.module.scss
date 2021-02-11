@@ -34,10 +34,14 @@
   font-size: 21pt;
   text-decoration: none;
   position: relative;
-  padding: 0 20px 10px 20px;
+  padding: 20px 20px 10px 20px;
   transition: opacity .3s;
 }
-
+@media screen and (max-width: 770px){
+  .Drawer ul li a {
+    font-size: 18pt;
+  }
+}
 .Drawer ul li a:hover, .active {
   opacity: .8;
 }

@@ -47,3 +47,8 @@
 .wrap{
   top: 50%;
 }
+@media screen and (max-width: 500px){
+  .wrap{
+    font-size:  10px;
+  }
+}

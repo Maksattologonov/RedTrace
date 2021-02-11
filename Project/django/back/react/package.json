@@ -24,6 +24,7 @@
     "react-spring": "^8.0.27",
     "react-use-gesture": "^9.0.0",
     "react-with-gesture": "^4.0.8",
+    "react-yandex-maps": "^4.6.0",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
