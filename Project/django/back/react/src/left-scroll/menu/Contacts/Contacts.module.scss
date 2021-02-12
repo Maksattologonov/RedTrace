@@ -48,16 +48,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #eb3b5a;
   width: 200px;
   height: 50px;
   border-radius: 3px;
   text-decoration: none;
-  color: #fff;
   &:hover,:focus{
     text-decoration: none;
-    background-color: #34495e;
-    color: white;
   }
 }
 @media screen and (max-width: 770px){

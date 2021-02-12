@@ -1,7 +1,6 @@
-import React, {Component, useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import Card from 'react-animated-3d-card'
 import classes from './Portfolio.module.scss'
-import {Link} from "react-router-dom";
 import axios from "axios";
 
 const headerStyle = {

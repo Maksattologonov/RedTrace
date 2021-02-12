@@ -61,12 +61,12 @@ class Instruments(models.Model):
 
 
 class Call(models.Model):
-    name = models.CharField(max_length=255, verbose_name='Имя')
-    last_name = models.CharField(max_length=255, verbose_name='Фамилия')
-    number = models.CharField(max_length=255, verbose_name='Номер телефона')
-    email = models.EmailField(max_length=255, verbose_name="Почта")
-    date = models.CharField(max_length=255, verbose_name='Когда удобно позвонить')
-    only_massage = models.BooleanField(verbose_name='Только позвонить')
+    name = models.CharField(max_length=255, verbose_name='Имя', blank=False)
+    last_name = models.CharField(max_length=255, verbose_name='Фамилия', blank=False)
+    number = models.CharField(max_length=255, verbose_name='Номер телефона', blank=False)
+    email = models.CharField(max_length=255, verbose_name="Почта", blank=True)
+    date = models.CharField(max_length=255, verbose_name='Когда удобно позвонить', blank=True)
+    only_massage = models.CharField(max_length=50,verbose_name='Только позвонить', blank=True)
 
     class Meta:
         verbose_name = 'Заказ звонка'

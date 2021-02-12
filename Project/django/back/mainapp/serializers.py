@@ -30,5 +30,5 @@ class InstrumentsSerializer(serializers.ModelSerializer):
 class CallSerializer(serializers.ModelSerializer):
     class Meta:
         model = Call
-        fields = '__all__'
+        fields = "__all__"
 

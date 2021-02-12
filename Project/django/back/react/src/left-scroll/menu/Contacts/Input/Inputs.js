@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
@@ -6,12 +6,12 @@ import Checkbox from '@material-ui/core/Checkbox';
 import Grid from '@material-ui/core/Grid';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
+import {makeStyles} from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import {NavLink} from "react-router-dom";
 import PhoneIcon from '@material-ui/icons/Phone';
 import {CssBaseline} from "@material-ui/core";
-
+import axios from "axios";
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -21,17 +21,17 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'center',
     },
     avatar: {
-        margin:'10px',
-        padding:'5px',
+        margin: '10px',
+        padding: '5px',
         color: 'white',
-        width:'30px',
+        width: '30px',
         height: '30px',
         borderRadius: '50%',
         backgroundColor: '#1e272e'
     },
     form: {
         width: '100%',
-        color:'#1e272e'// Fix IE 11 issue.
+        color: '#1e272e'// Fix IE 11 issue.
     },
     submit: {
         margin: theme.spacing(2, 0, 2),
@@ -43,17 +43,42 @@ export default function Input() {
 
     const classes = useStyles();
 
+    const submit = e => {
+        let name = e.target[0].value;
+        let dob = e.target[1].value;
+        let creditlimit = e.target[2].value;
+        let data = {
+            name,
+            dob,
+            creditlimit
+        };
+        postCustomer(data);
+    };
+
+
+    const postCustomer = data => {
+        axios
+            .post('http://127.0.0.1:8000/api/call/', data.json())
+            .then(d=> {
+                console.log(d)
+            })
+            .catch(err => alert(err))
+    }
+
     return (
         <Container component="main" maxWidth="sm">
-            <CssBaseline />
+            <CssBaseline/>
             <div className={classes.paper}>
                 <PhoneIcon className={classes.avatar}>
-                    <LockOutlinedIcon />
+                    <LockOutlinedIcon/>
                 </PhoneIcon>
                 <Typography component="h1" variant="h5">
                     Заказать звонок
                 </Typography>
-                <form className={classes.form} noValidate>
+                <form className={classes.form} onSubmit={e => {
+                    e.preventDefault();
+                    submit(e);
+                }}>
                     <Grid container spacing={2}>
                         <Grid item xs={12} sm={6}>
                             <TextField
@@ -83,6 +108,20 @@ export default function Input() {
                                 variant="outlined"
                                 required
                                 fullWidth
+                                id="number"
+                                type='number'
+                                label="Номер телефона"
+                                name="number"
+                                autoComplete="number"
+
+                            />
+                        </Grid>
+
+                        <Grid item xs={12}>
+                            <TextField
+                                variant="outlined"
+                                required
+                                fullWidth
                                 id="email"
                                 label="Email почта"
                                 name="email"
@@ -107,16 +146,16 @@ export default function Input() {
                                 variant="outlined"
                                 required
                                 fullWidth
-                                name="password"
+                                name="time"
                                 label=""
-                                type="time"
-                                id="password"
-                                autoComplete="current-password"
+                                type="datetime-local"
+                                id="time"
+                                autoComplete="date"
                             />
                         </Grid>
                         <Grid item xs={12}>
                             <FormControlLabel
-                                control={<Checkbox value="allowExtraEmails" color="primary" />}
+                                control={<Checkbox value="allowExtraEmails" color="primary"/>}
                                 label="Только написать"
                             />
                         </Grid>

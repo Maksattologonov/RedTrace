@@ -7,6 +7,7 @@ from mainapp.views import index
 from . import settings
 
 urlpatterns = [
+    path('', include('mainapp.urls')),
     path('admin/', admin.site.urls),
     path('', index),
     path('about-us/', index),
@@ -15,7 +16,7 @@ urlpatterns = [
     path('about-us/portfolio', index),
     path('about-us/contacts', index),
     path('about-us/callback', index),
-    path('', include('mainapp.urls'))
+
 ]
 
 if settings.DEBUG:

@@ -1,6 +1,7 @@
 import permission as permission
+from django.http import HttpResponse
 from django.shortcuts import render
-from rest_framework import permissions, status, viewsets
+from rest_framework import permissions, status, viewsets, generics
 from rest_framework.generics import CreateAPIView
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -42,5 +43,11 @@ class InstrumentView(APIView):
         return Response(data=serializer.data, status=status.HTTP_200_OK)
 
 
-class CallViewSet(CreateAPIView):
-    serializer_class = CallSerializer
+class CallSetView(APIView):
+
+    def post(self, request):
+        data = CallSerializer(data=request.data)
+        if data.is_valid():
+            data.save()
+        return Response(status=201)
+

@@ -9,7 +9,6 @@ const headerStyle = {
     height: '250px',
     backgroundColor: '#eb3b5a',
     marginTop: '30%',
-
 };
 
 
