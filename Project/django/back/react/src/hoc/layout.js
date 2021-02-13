@@ -6,6 +6,7 @@ import Navbar from "../left-scroll/menu/Navbar/Navbar";
 import Media from 'react-media';
 
 
+
 const Layout = props => {
 
 
@@ -27,16 +28,16 @@ const Layout = props => {
 
     return (
         <div className={classes.Layout}>
-            <Media query="(min-width: 770px)">
-                {matches => {
-                    return matches ?
-                <Navbar/>
-                :
 
-                    <MenuToggle
-                        onToggle={toggleMenuHandler}
-                        isOpen={state.menu}
-                    />
+            <Media query="(min-width: 770px)">{matches => {
+                    return matches ?
+                        <Navbar/>
+                        :
+
+                        <MenuToggle
+                            onToggle={toggleMenuHandler}
+                            isOpen={state.menu}
+                        />
 
                 }}</Media>
             <Drawer

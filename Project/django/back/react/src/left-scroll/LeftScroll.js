@@ -5,7 +5,6 @@ import Service from "./menu/Services/Services";
 import Portfolio from "./menu/Portfolio/Portfolio";
 import Instruments from "./menu/Instruments/Instruments";
 import Contacts from "./menu/Contacts/Contacts";
-import Input from "./menu/Contacts/Input/Inputs";
 import {animated, useTransition} from "react-spring";
 import {Grid} from "@material-ui/core"
 
