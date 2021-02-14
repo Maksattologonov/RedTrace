@@ -72,14 +72,14 @@ export default function Input() {
                 <PhoneIcon className={classes.avatar}>
                     <LockOutlinedIcon/>
                 </PhoneIcon>
-                <Typography component="h1" variant="h5">
+                <Typography component="h1" variant="h4">
                     Заказать звонок
                 </Typography>
                 <form className={classes.form} onSubmit={e => {
                     e.preventDefault();
                     submit(e);
                 }}>
-                    <Grid container spacing={2}>
+                    <Grid container spacing={1}>
                         <Grid item xs={12} sm={6}>
                             <TextField
                                 autoComplete="fname"
@@ -103,7 +103,7 @@ export default function Input() {
                                 autoComplete="lname"
                             />
                         </Grid>
-                        <Grid item xs={12}>
+                        <Grid item xs={12} sm={6}>
                             <TextField
                                 variant="outlined"
                                 required
@@ -117,7 +117,7 @@ export default function Input() {
                             />
                         </Grid>
 
-                        <Grid item xs={12}>
+                        <Grid item xs={12} sm={6}>
                             <TextField
                                 variant="outlined"
                                 required
@@ -170,7 +170,7 @@ export default function Input() {
                         Отправить
                     </Button>
                     <Grid container justify="flex-end">
-                        <Grid item>
+                        <Grid item xs={12}>
                             <NavLink to="/about-us/contacts" variant="body2" style={{color: '#1e272e'}}>
                                 Вернуться назад
                             </NavLink>

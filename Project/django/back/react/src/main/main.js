@@ -8,7 +8,7 @@ const Main = props => {
     const [open, set] = useState(true)
     return (
         <div className={classes.wrap}>
-            <video autoPlay muted loop id="myVideo"
+            <video autoPlay muted loop id="myVideo" className={classes.video}
                    style={{position: 'absolute', top: '-20%', right: '0', left: 0, width: '100%', overflowY: 'hidden'}}>
                 <source src={video} type="video/mp4"/>
             </video>

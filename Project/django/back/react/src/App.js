@@ -25,13 +25,13 @@ const App = props => {
     const opacity = useLocation()
     const visibility = useTransition(opacity, location => location.pathname, {
         from: {
-            transition: '0.5s', opacity: 0, display: 'none', transform: 'translateZ(45deg)'
+            transition: '1s', opacity: 0,display: 'none'
         },
         enter: {
-            transition: '2s', display: 'block', opacity: 1, transform: 'translateZ(0)'
+            transition: '1.5s',  opacity: 1,display: 'block'
         },
         leave: {
-            transition: '0.3s', opacity: 0, display: 'none', transform: 'translateZ(-45deg)'
+             transition: '1s', opacity: 0, display: 'none'
         }
     })
 

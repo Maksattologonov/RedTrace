@@ -1,2 +1,21 @@
-*{font-family: 'Rubik', sans-serif;}
+*{font-family: 'Rubik', sans-serif;
+  cursor: crosshair;
+  &:hover,:focus{
+    cursor: crosshair;
+  }}
 
+link,:hover,:focus{
+  cursor: crosshair;
+}
+img, video,:hover,:focus{
+  cursor: crosshair;
+}
+/*Убрать полосу прокрутки у элемента*/
+.element::-webkit-scrollbar {
+  width: 0;
+}
+
+/*Убрать полосу прокрутки для всей страницы*/
+::-webkit-scrollbar {
+  width: 0;
+}

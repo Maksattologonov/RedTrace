@@ -10,7 +10,7 @@ const Navbar = props => {
     return (
         <>
 
-            <div className={classes.main}>
+            <div className={classes.main} style={{backgroundColor: props.bgc}}>
                 <div className='container-fluid'>
                     <Grid xs={12}>
                         <div className={classes.menu}>

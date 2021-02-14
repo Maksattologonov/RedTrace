@@ -31,7 +31,7 @@ const Layout = props => {
 
             <Media query="(min-width: 770px)">{matches => {
                     return matches ?
-                        <Navbar/>
+                        <Navbar bgc={props.bgc}/>
                         :
 
                         <MenuToggle
